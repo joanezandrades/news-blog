@@ -123,7 +123,7 @@ if( ! function_exists( 'news_blog_setup' ) ){
 
             $args = array(
                 'name'          => __( 'Sidebar name', 'Newsletter widget' ),
-                'id'            => 'widget-newsletter',
+                'id'            => 'widget-newsletter-footer',
                 'description'   => 'Adicione sua newsletter aqui!',
                 'before_widget' => '',
                 'after_widget'  => '',
