@@ -215,8 +215,8 @@ get_header();
     <div class="newsletter">
         <!-- Add newsletter -->
         <?php 
-            if( is_active_sidebar( 'widget-newsletter' ) ) {
-                dynamic_sidebar( 'widget-newsletter' );
+            if( is_active_sidebar( 'widget-newsletter-footer' ) ) {
+                dynamic_sidebar( 'widget-newsletter-footer' );
             }
         ?>
     </div>
