@@ -212,12 +212,32 @@ get_header();
         ?>
     </section> <!-- /End section -->
     
-    <div class="newsletter">
+    <div class="newsletter container">
         <!-- Add newsletter -->
+        <h3 class="title-newsletter">Inscreva-se na nossa newsletter e receba dicas semanalmente!</h3>
+
+        <form action="" class="form-newsletter">
+            <div class="wrap-input col-xl-5">
+                <label for="user_name" class="desc">Nome</label>
+                <input type="text" name="name" id="user_name" class="ipt-form" placeholder="Meu nome" />
+            </div>
+            <div class="wrap-input col-xl-5">
+                <label for="user_email" class="desc">E-mail</label>
+                <input type="email" name="email" id="user_email" class="ipt-form" placeholder="meuemail@domain.com" />
+            </div>
+            <div class="wrap-input col-xl-2">
+                <input type="submit" value="Manda ver" id="send_newsletter" class="btn-send">
+            </div>
+        </form>
+        <span class="caution">Não se preocupe, também não gostamos de spam.</span>
+
+        <!-- -->
         <?php 
-            if( is_active_sidebar( 'widget-newsletter-footer' ) ) {
-                dynamic_sidebar( 'widget-newsletter-footer' );
-            }
+            /**
+             *if( is_active_sidebar( 'widget-newsletter-footer' ) ) {
+             *    dynamic_sidebar( 'widget-newsletter-footer' );
+             *}
+            */
         ?>
     </div>
 
