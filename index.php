@@ -69,7 +69,7 @@ get_header();
                 <li class="lastnews-item">
                     <?php the_post_thumbnail( 'post-thumb-small', [ 'class' => 'thumb-mini' ] ) ?>
                     <span class="date"><?php the_date()?></span>
-                    <p class="title"><?php the_title(); ?></p>
+                    <a href="<?php the_permalink() ?>" class="title"><?php the_title(); ?></a>
                 </li>                
                 <?php
                     endforeach;
@@ -106,8 +106,10 @@ get_header();
                         <?php the_post_thumbnail( 'post-thumb-medium-retangle', [ 'class' => 'post-thumb' ] ); ?>
                         <span class="category"><?php the_category( 'single' ) ?></span>
                     </div>
-                    <h3 class="title-small"><?php the_title(); ?></h3>
-                    <?php the_excerpt(); ?>
+                    <a href="<?php the_permalink() ?>">
+                        <h3 class="title-small" title="<?php the_title(); ?>"><?php the_title(); ?></h3>
+                        <?php the_excerpt(); ?>
+                    </a>
                     <div class="wrap-infos">
                         <!-- Add visualizações -->
                         <span class="views"><i class="fa fa-eye"></i>193</span>
@@ -144,8 +146,10 @@ get_header();
                 <div class="content-post">
                     <div class="half-left-post col-8">
                         <span class="category"><?php the_category( 'single' ); ?></span>
-                        <h2 class="title-medium"><?php the_title(); ?></h2>
-                        <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink() ?>">
+                            <h2 class="title-medium" title="<?php the_title() ?>"><?php the_title(); ?></h2>
+                            <?php the_excerpt(); ?>
+                        </a>
                         <div class="wrap-infos">
                             <!-- add views -->
                             <span class="views"><i class="fa fa-eye"></i>220</span>
@@ -198,7 +202,9 @@ get_header();
                     <?php the_post_thumbnail(); ?>
                     <span class="category"><?php the_category( 'single' ); ?></span>
                 </div>
-                <h3 class="title"><?php the_title(); ?></h3>
+                <a href="<?php the_permalink() ?>">
+                    <h3 class="title" title="<?php the_title(); ?>"><?php the_title(); ?></h3>
+                </a>
                 <div class="wrap-infos">
                     <!-- Add Views -->
                     <span class="views"><i class="fa fa-eye"></i>220</span>
