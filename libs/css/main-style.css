@@ -434,4 +434,83 @@ html {
   background: #25203D;
   height: 290px; }
 
+.content-article {
+  margin-top: 160px; }
+  .content-article .header-post {
+    width: 100%;
+    height: 590px;
+    margin: 20px auto;
+    position: relative; }
+    .content-article .header-post .background-thumb {
+      width: 100%;
+      height: 550px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: 0 119; }
+      .content-article .header-post .background-thumb .post-thumb-full {
+        width: 100%;
+        height: 100%;
+        position: absolute; }
+    .content-article .header-post .wrap-infos {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #E8E8E8; }
+      .content-article .header-post .wrap-infos .views,
+      .content-article .header-post .wrap-infos .author,
+      .content-article .header-post .wrap-infos .date {
+        font-size: 14px;
+        font-weight: 400;
+        color: #777775; }
+        .content-article .header-post .wrap-infos .views .icon,
+        .content-article .header-post .wrap-infos .author .icon,
+        .content-article .header-post .wrap-infos .date .icon {
+          margin: 0 10px;
+          color: #D97841; }
+  .content-article .article {
+    margin: 25px auto;
+    padding: 15px 0; }
+    .content-article .article .title-post {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 48px;
+      color: #383837;
+      margin-bottom: 25px; }
+    .content-article .article p {
+      font-size: 18px;
+      color: #777775;
+      line-height: 32px;
+      margin: 10px auto; }
+    .content-article .article .wp-caption {
+      max-width: 100%;
+      height: auto;
+      margin: 50px auto; }
+      .content-article .article .wp-caption .size-large,
+      .content-article .article .wp-caption .size-full {
+        width: 100%;
+        height: auto; }
+      .content-article .article .wp-caption .wp-caption-text {
+        margin-top: 15px;
+        padding: 15px;
+        font-size: 14px;
+        font-style: italic;
+        color: #777775;
+        text-align: center; }
+    .content-article .article .alignleft {
+      margin: 50px 20px 50px 0; }
+    .content-article .article .alignright {
+      margin: 50px 0px 50px 20px; }
+    .content-article .article .aligncenter {
+      margin: 50px auto; }
+
+.wrap-comments {
+  margin: 50px auto;
+  padding: 25px 0;
+  border-top: 1px solid #E8E8E8; }
+  .wrap-comments .fb-comments {
+    width: 60%;
+    margin: 0 auto;
+    display: block; }
+
 /*# sourceMappingURL=main-style.css.map */
