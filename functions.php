@@ -136,6 +136,79 @@ if( ! function_exists( 'news_blog_setup' ) ){
 
 };
 
+/**
+ * Registro das redes sociais
+ * Campos: Página no Facebook - Instagram - Youtube
+ * Post type: pages->contato
+ * 
+ * prefixo nb_ = newsblog_;
+*/
+
+/**
+ * Função callback
+ * recebe a variável $post para referência do ID quando salvar no banco
+*/
+function cb_inputs_social_network( $post ) {
+
+    $postID = get_post_meta( $post->ID ); // Referência ao ID do post
+
+    // Variáveis p/ guardar os dados
+    $nb_facebook        = $postID['nb_facebook_link'][0];
+    $nb_instagram       = $postID['nb_instagram_link'][0];
+    $nb_youtube         = $postID['nb_youtube_link'][0];
+    ?>
+
+    <!-- Campos -->
+    <div class="wrap-input">
+        <label for="nb_facebook_link">Insira o endereço da Página/Perfil do Facebook:</label>
+        <input type="text" class="ipt" name="nb_facebook_link" value="<?php if( !empty( $nb_facebook ) ) { echo $nb_facebook; } ?>">
+    </div>
+    <div class="wrap-input">
+        <label for="nb_instagram_link">Insira o endereço do seu perfil no instagram:</label>
+        <input type="text" class="ipt" name="nb_instagram_link" value="<?php if( !empty( $nb_instagram ) ) { echo $nb_instagram; } ?>">
+    </div>
+    <div class="wrap-input">
+        <label for="nb_youtube_link">Insira o endereço do seu canal no youtube:</label>
+        <input type="text" class="ipt" name="nb_youtube_link" value="<?php if( !empty( $nb_youtube ) ) { echo $nb_youtube; } ?>">
+    </div>
+    <?php
+}
+
+/**
+ * Salvando esses no banco de dados
+ * recebe o $post_id para salvar a referência no banco
+*/
+function save_inputs_social_network( $post_id ) {
+
+    if( isset( $_POST['nb_facebook_link'] ) ) {
+        update_post_meta( $post_id, 'nb_facebook_link', sanitize_text_field( $_POST['nb_facebook_link'] ) );
+    }
+    if( isset( $_POST['nb_instagram_link'] ) ) {
+        update_post_meta( $post_id, 'nb_instagram_link', sanitize_text_field( $_POST['nb_instagram_link'] ) );
+    }
+    if( isset( $_POST['nb_youtube_link'] ) ) {
+        update_post_meta( $post_id, 'nb_youtube_link', sanitize_text_field( $_POST['nb_youtube_link'] ) );
+    }
+}
+add_action( 'save_post', 'save_inputs_social_network' );
+
+/**
+ * Registrando os campos
+*/
+function nb_reg_social_networks() {
+    
+    add_meta_box(
+        'nb_social_network',
+        'Adicione os links das suas redes sociais',
+        'cb_inputs_social_network',
+        'page',
+        'advanced',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'nb_reg_social_networks' );
+
+
 // Include do template tags
 require_once( '/inc/template_tags.php' );
 ?>
