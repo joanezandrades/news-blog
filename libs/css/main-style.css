@@ -65,6 +65,8 @@ html {
         color: #D97841; }
       .main-header .blog-main-menu .menu-item a:hover {
         text-decoration: none; }
+  .main-header #btn-menu {
+    display: none; }
   .main-header .title-blog {
     font-size: 32px;
     font-weight: 700;
@@ -72,6 +74,34 @@ html {
     top: 130px;
     left: 220px;
     position: absolute; }
+
+.main-header-compact {
+  height: 90px; }
+  .main-header-compact .logotipo {
+    width: 80px;
+    height: 80px;
+    margin: 5px; }
+  .main-header-compact .blog-main-menu {
+    display: none; }
+  .main-header-compact #btn-menu {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #F2D087;
+    border-radius: 3px;
+    text-align: center;
+    display: block;
+    top: 20px;
+    right: 0;
+    position: absolute; }
+    .main-header-compact #btn-menu .fa-bars {
+      font-size: 32px;
+      color: #F2D087;
+      margin: 7px 0; }
+  .main-header-compact .title-blog {
+    font-size: 24px;
+    color: #ffffff;
+    top: 30px;
+    left: 130px; }
 
 #homepage {
   margin-top: 160px; }

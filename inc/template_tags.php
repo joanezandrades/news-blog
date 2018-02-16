@@ -28,7 +28,7 @@ function nb_custom_logo() {
 */
 function nb_main_header() {
     ?>
-    <header class="main-header">
+    <header class="main-header main-header-compact">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-3">
@@ -45,6 +45,9 @@ function nb_main_header() {
                         );
                         wp_nav_menu( $argsMenu );
                     ?>
+                    <span id="btn-menu">
+                        <i class="fa fa-bars"></i>
+                    </span>
                 </div><!-- /End Menu -->
 
                 <div class="col-xl-3">
