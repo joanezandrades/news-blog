@@ -28,7 +28,7 @@ function nb_custom_logo() {
 */
 function nb_main_header() {
     ?>
-    <header class="main-header main-header-compact">
+    <header class="main-header">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-3">
