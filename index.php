@@ -10,8 +10,7 @@ get_header();
     <section id="homepage" class="row">    
         <div id="slider-homepage" class="slider-homepage col-xl-9">
             <?php
-            
-            global $post;
+
             $argsPosts = array(
                 'posts_per_page'    => 3,
                 'offset'            => 0,
@@ -22,11 +21,11 @@ get_header();
                 'order'             => 'DESC',
                 'post_status'       => 'publish'
             );
-            $arrayPosts = get_posts( $argsPosts );
+            $destaquesHome = new WP_Query( $argsPosts );
 
-            if( $arrayPosts ) :
-                foreach( $arrayPosts as $post ) :
-                    setup_postdata( $post );
+            if( $destaquesHome->have_posts() ) :
+                while( $destaquesHome->have_posts() ) :
+                    $destaquesHome->the_post();
             ?>
             <div class="slider-item">
                 <?php the_post_thumbnail( 'post-thumb-big', [ 'class' => 'thumbnail-destaque'] ) ?>
@@ -39,8 +38,9 @@ get_header();
             </div>
 
             <?php
-                wp_reset_postdata();
-                endforeach;
+                endwhile;
+                // reset WP_query
+                wp_reset_query();
             endif;
             ?>
         </div> <!-- /End destaques -->
@@ -49,7 +49,6 @@ get_header();
             <ul class="list-lastnews">
                 <h3 class="title-box">Principais histórias</h3>
                 <?php
-                global $post;
                 $argsLastNews = array(
                     'posts_per_page'    => 3,
                     'offset'            => 2,
@@ -60,11 +59,12 @@ get_header();
                     'order'             => 'DESC',
                     'post_status'       => 'publish'
                 );
-                $lastNews = get_posts( $argsPosts );
+                $lastNews = new WP_Query( $argsPosts );
                 
-                if( $lastNews ) :
-                    foreach( $lastNews as $post ) :
-                        setup_postdata( $post );
+                if( $lastNews->have_posts() ) :
+                    // The Loop
+                    while( $lastNews->have_posts() ):
+                        $lastNews->the_post();
                 ?>
                 <li class="lastnews-item">
                     <?php the_post_thumbnail( 'post-thumb-small', [ 'class' => 'thumb-mini' ] ) ?>
@@ -72,7 +72,9 @@ get_header();
                     <a href="<?php the_permalink() ?>" class="title"><?php the_title(); ?></a>
                 </li>                
                 <?php
-                    endforeach;
+                    endwhile;
+                    // Reset the query
+                    wp_reset_query();
                 endif;
                 ?>
             </ul>
@@ -83,7 +85,6 @@ get_header();
     <section id="sct-2" class="row">
         <div class="col-xl-3">
             <?php
-            global $post;
             $argsPost = array(
                 'posts_per_page'        => 1,
                 'offset'                => 0,
@@ -94,11 +95,11 @@ get_header();
                 'order'                 => '',
                 'post_status'           => 'publish'
             );
-            $singlePost = get_posts( $argsPost );
+            $singlePost = new WP_query( $argsPost );
 
-            if( $singlePost ) :
-                foreach( $singlePost as $post ) :
-                    setup_postdata( $post );
+            if( $singlePost->have_posts() ) :
+                while( $singlePost->have_posts() ) :
+                    $singlePost->the_post();
             ?>
             <div class="post-wrap-left">
                 <div class="content-post">
@@ -118,14 +119,13 @@ get_header();
                 </div>
             </div>
             <?php
-                wp_reset_postdata();
-                endforeach;
+                endwhile;
+                wp_reset_query();
             endif;
             ?>
         </div> <!-- /End People Post -->
         <div class="col-xl-6">
             <?php 
-            global $post;
             $argsPosts = array(
                 'posts_per_page'        => 1,
                 'offset'                => 0,
@@ -136,11 +136,11 @@ get_header();
                 'order'                 => 'DESC',
                 'post_status'           => 'publish'
             );
-            $healthPosts = get_posts( $argsPosts );
+            $healthPosts = new WP_query( $argsPosts );
 
-            if( $healthPosts ) :
-                foreach( $healthPosts as $post ) :
-                    setup_postdata( $post ); 
+            if( $healthPosts->have_posts() ) :
+                while( $healthPosts->have_posts() ) :
+                    $healthPosts->the_post(); 
             ?>
             <div class="post-wrap-center">
                 <div class="content-post">
@@ -162,8 +162,9 @@ get_header();
                 </div>
             </div>
             <?php
-                wp_reset_postdata();
-                endforeach;
+                endwhile;
+                // Reset new Query()
+                wp_reset_query();
             endif;
             ?>
         </div><!-- /End wrap-wide -->
@@ -190,11 +191,11 @@ get_header();
             'order'                 => 'DESC',
             'post_status'           => 'publish'
         );
-        $listPosts = get_posts( $argsPosts );
+        $listPosts = new WP_query( $argsPosts );
 
-        if( $listPosts ) :
-            foreach( $listPosts as $post ) :
-                setup_postdata( $post );
+        if( $listPosts->have_posts() ) :
+            while( $listPosts->have_posts() ) :
+                $listPosts->the_post();
         ?>
         <div class="post-item col-xl-3">
             <div class="post-content">
@@ -213,7 +214,9 @@ get_header();
             </div>
         </div>
         <?php 
-            endforeach;
+            endwhile;
+            // reset wp_query()
+            wp_reset_query();
         endif;
         ?>
     </section> <!-- /End section -->
