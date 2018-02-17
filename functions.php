@@ -160,10 +160,11 @@ function nb_configs(){
     );
 
     $args_nb_configs = array(
-        'labels'    => $labels,
-        'supports'  => $supports,
-        'public'    => true,
-        'menu-icon' => ''
+        'labels'                => $labels,
+        'supports'              => $supports,
+        'public'                => true,
+        'publicly_queryable'    => false,
+        'menu-icon'             => '',
     );
 
     register_post_type( 'nb_configs', $args_nb_configs );

@@ -35,7 +35,7 @@ function nb_main_header() {
                     <?php nb_custom_logo(); ?>
                 </div> <!-- /End logotipo -->
 
-                <div class="col-xl-6">
+                <div class="col-xl-7">
                     <?php 
                         $argsMenu = array(
                             'menu'          => 'main-menu',
@@ -50,9 +50,35 @@ function nb_main_header() {
                     </span>
                 </div><!-- /End Menu -->
 
-                <div class="col-xl-3">
-                    <!-- Add Social Media -->
+                <div class="col-xl-2">
+                    <!-- Configs social links-->
+                    <?php 
+                        $page_config = get_page_by_title( 'configuracoes', OBJECT, 'nb_configs' );
+                        $page_id  = $page_config->ID;
+
+                        $pageFacebook = get_post_meta( 784, 'nb_facebook_link', true );
+                        $pageInstagram = get_post_meta( 784, 'nb_instagram_link', true );
+                        $pageYoutube = get_post_meta( 784, 'nb_youtube_link', true );
+                    ?>
                     <!-- Adicionar campos na página de contato -->
+                    <div class="header-social-network">
+                        <h3 class="title">Conecte-se com a gente</h3>
+                        <ul class="social-network-list">
+                            <li class="network-page" title="Curta nossa Página no facebook">
+                                <a href="<?php echo $pageFacebook; ?>" class="network-link" target="_blank"><i class="fab fa-facebook"></i></i></a>
+                            </li>
+                            <li class="network-page" title="Siga nosso instagram">
+                                <a href="<?php echo $pageInstagram; ?>" class="network-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="network-page" title="Assine nosso canal no youtube">
+                                <a href="<?php echo $pageYoutube; ?>" class="network-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </li>
+
+                            <?php echo $pageFacebook; ?>
+                        </ul>
+                    </div>
+                    
+
                 </div>
                 <h1 class="title-blog" alt="" title="<?php echo bloginfo( 'description' ) ?>"><?php echo bloginfo( 'description' ) ?></h1>
             </div>
