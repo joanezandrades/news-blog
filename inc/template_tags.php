@@ -28,7 +28,7 @@ function nb_custom_logo() {
 */
 function nb_main_header() {
     ?>
-    <header class="main-header">
+    <header class="<?php if( is_home() ) {echo "main-header";} else { echo "main-header main-header-compact";} ?> ">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-3">

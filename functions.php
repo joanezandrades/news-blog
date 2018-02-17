@@ -137,6 +137,57 @@ if( ! function_exists( 'news_blog_setup' ) ){
 };
 
 /**
+ * Criando post_type: config_blog
+ * Esse post type é exclusivo para configuração de redes sociais etc..
+*/
+add_action( 'init', 'nb_configs' );
+function nb_configs(){
+    
+    $pluralName = "Páginas de Configurações";
+    $singularName = "Página de Configuração";
+
+    $labels = array(
+        'name'          => $pluralName,
+        'singular_name' => $singularName,
+        'add_new'       => 'Nova ' . $singularName,
+        'add_new_item'  => 'Adicionar ' . $singularName,
+        'edit_item'     => 'Editar ' . $singularName,
+        'menu_name'     => 'Configurações de contato'
+    );
+
+    $supports = array(
+        'title'
+    );
+
+    $args_nb_configs = array(
+        'labels'    => $labels,
+        'supports'  => $supports,
+        'public'    => true,
+        'menu-icon' => ''
+    );
+
+    register_post_type( 'nb_configs', $args_nb_configs );
+}
+
+/**
+ * Criação da página de configurações.
+ * ***CORRIGIR BUG***
+ * Quando habilitado o "wp_insert_post()" está criando vários posts, quando deveria cria apenas um.
+*/
+// Gather post data.
+$my_post = array(
+    'ID'            => 0,
+    'post_title'    => 'Configurações',
+    'post_status'   => 'publish',
+    'post_type'     => 'nb_configs', // Criar post type
+    'slug'          => 'configuracoes',
+);
+ 
+// Insert the post into the database.
+// wp_insert_post( $my_post, $wp_error );
+
+
+/**
  * Registro das redes sociais
  * Campos: Página no Facebook - Instagram - Youtube
  * Post type: pages->contato
@@ -201,7 +252,7 @@ function nb_reg_social_networks() {
         'nb_social_network',
         'Adicione os links das suas redes sociais',
         'cb_inputs_social_network',
-        'page',
+        'nb_configs',
         'advanced',
         'default'
     );
