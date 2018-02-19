@@ -28,415 +28,547 @@ html
 
 // -> Adsense's 
 .adsense-800x100
-    background: $c-neuter-secondary
-
-    width: 800px
-    height: 100px
+    @media #{$screen-phone}
+        display: none
     
-    margin: 50px auto
+    @media #{$screen-desktop}
+        background: $c-neuter-secondary
 
-    border: 1px solid $c-neuter-secondary
+        width: 800px
+        height: 100px
+        
+        margin: 50px auto
 
-    // -> provisório
-    p
-        font-size: $fs-18px
-        font-weight: $f-bold
-        text-align: center
-        line-height: 5.5
+        border: 1px solid $c-neuter-secondary
 
-        display: block
+        // -> provisório
+        p
+            font-size: $fs-18px
+            font-weight: $f-bold
+            text-align: center
+            line-height: 5.5
 
+            display: block
 
 // -> Socials icons configs
 .header-social-network
-    height: 120px
-    display: flex
-    flex-wrap: wrap
-    align-content: center
+    @media #{$screen-phone}
+        display: none
     
-    .title
-        font-size: $fs-16px
-        color: $c-neuter
-        display: block
-
-    .social-network-list
-        width: 100%
-        height: 30px
-        margin: 10px 0
-
+    @media #{$screen-desktop}
+        height: 120px
         display: flex
-
-        // li.items
-        .network-page
-            width: 48px
-            height: 48px
-
-            text-align: center
-            margin: auto 15px
-
-            // a.network-link
-            .network-link
-                font-size: $fs-24px
-                color: $c-neuter
-                text-decoration: none
-
-
-// Main Header
-.main-header
-    background: $c-primary
-    width: 100%
-    height: 120px
-
-    top: 0
-    left: 0
-
-    z-index: 999
-    position: fixed
-
-    // .logotipo
-    .logotipo
-        width: 175px
-        height: 175px
-
-        margin: 15px auto
-
-
-    // .blog-main-menu
-    .blog-main-menu
-        width: auto
-        height: 100%
-        margin: 0
-
-        display: flex
+        flex-wrap: wrap
         align-content: center
-        align-items: center
-        justify-content: flex-end
-
-        .menu-item
-            width: auto
-
-            margin: 0 25px
-
-            a
-                font-size: $fs-18px
-                font-weight: $f-regular
-                color: $c-accent
-
-            a:hover
-                text-decoration: none
-
-    // btn menu
-    #btn-menu
-        display: none
-
-    // .title-blog
-    .title-blog
-        font-size: $fs-32px
-        font-weight: $f-bold
-        color: $c-text
-
-        top: 130px
-        left: 220px
-        position: absolute
-
-// Main Header Compact for desktop
-.main-header-compact
-    height: 90px
-
-    // Logotipo compacto
-    .logotipo
-        width: 80px
-        height: 80px
-        margin: 5px
-
-    // .blog-main-menu
-    .blog-main-menu
-        display: none
-
-    // btn menu
-    #btn-menu
-        width: 48px
-        height: 48px
-
-        border: 1px solid $c-secondary
-        border-radius: 3px
-        text-align: center
-        display: block        
         
-        top: 20px
-        right: 0
-        position: absolute
-        
-        .fa-bars
-            font-size: $fs-32px
-            color: $c-secondary
-            margin: 7px 0
+        .title
+            font-size: $fs-16px
+            color: $c-neuter
+            display: block
 
-    // Título
-    .title-blog
-        font-size: $fs-24px
-        color: $c-neuter
-
-        top: 30px
-        left: 130px
-
-// Homepage: sct: 1
-#homepage
-    margin-top: 160px
-
-    // slider-homepage
-    .slider-homepage
-        height: 560px
-        padding: 0 15px
-
-        // Arrows Slick Slider
-        .slick-arrow
-            background: $c-primary
-            // box-shadow: 2px 2px 0px $c-secondary
-            width: 60px
-            height: 60px
-
-            border: none
-            border-radius: 3px
-
-            font-size: $fs-14px
-            color: $c-secondary
-            border: none
-            outline: none
-
-            top: calc(100% / 2 - 30px)
-            position: absolute
-            z-index: 9
-
-        .slick-next
-            right: 8px
-
-        .slick-prev
-            left: 8px
-
-        // Dots Slick slider
-        .slick-dots
-            width: 50%
-            height: 35px
-
-            bottom: 10px
-            left: calc(100% / 2 - 25%)
-            position: absolute
+        .social-network-list
+            width: 100%
+            height: 30px
+            margin: 10px 0
 
             display: flex
-            align-items: center
-            justify-content: center
-            margin: 0
 
-            li
-                background: $c-neuter
+            // li.items
+            .network-page
+                width: 48px
+                height: 48px
 
+                text-align: center
                 margin: auto 15px
-                border: 1px solid $c-neuter
-                border-radius: 3px
-                
-                opacity: .5
 
-                button
-                    background: none
-                    border: none
-                    color: $c-neuter
-
-            .slick-active
-                background: $c-primary
-                border: 1px solid $c-primary
-                opacity: 1
-
-                button
-                    color: $c-primary
-
-        // .slider-item
-        .slider-item
-            height: 100%
-            position: relative
-
-            &:before
-                content: ''
-                background: $c-primary
-                opacity: .5
-
-                width: 100%
-                height: 100%
-
-                top: 0
-                left: 0
-                z-index: 2
-                position: absolute
-
-            // .thumbnail-destaque
-            .thumbnail-destaque
-                width: 100%
-                height: 100%
-
-                top: 0
-                left: 0
-                z-index: 1
-                position: absolute
-
-
-            .content-post
-                width: 100%
-                height: 100%
-
-                padding: 0 50px
-
-                top: 0
-                left: 0
-                z-index: 9
-                position: absolute
-
-                .category-post
-                    min-width: 105px
-                    max-width: 125px
-
-                    padding: 8px 12px
-                    margin: 20px auto
-                    display: block
-
-                    border: 1px solid $c-secondary
-                    border-radius: 5px
-
-                    text-align: center
-
-                    a
-                        font-size: $fs-14px
-                        color: $c-secondary
-                        text-transform: uppercase
-
-                        &:hover
-                            text-decoration: none
-
-
-                .title-post
-                    font-size: $fs-32px
-                    font-weight: $f-bold
-                    text-align: center
-                    color: $c-secondary
-                    line-height: 1.7
-
-                    margin-top: 150px
-                    padding: 10px 15px
-
-                .link-post
-                    width: 150px                    
-                    border: 2px solid $c-neuter
-                    border-radius: 5px
-                    
-                    margin: 20px auto
-                    padding: 8px 15px
-                    display: block
-
-                    font-size: $fs-18px
-                    text-align: center
+                // a.network-link
+                .network-link
+                    font-size: $fs-24px
                     color: $c-neuter
                     text-decoration: none
 
-                    bottom: 80px
-                    left: calc(100% / 2 - 75px)
-                    position: absolute
 
-    // Box last news
-    .last-news
-        height: 560px
+// --------------------------------------------------------------
+// # Main Header
+// --------------------------------------------------------------
+// 
+.main-header
+    @media #{$screen-phone}
+        background: $c-primary
+        width: 100%
+        height: 80px
 
-        // ul
-        .list-lastnews
-            width: 330px
+        top: 0
+        left: 0
+
+        z-index: 999
+        position: fixed
+
+        // .logotipo
+        .logotipo
+            width: 90px
+            height: 90px
+
+            margin: 15px auto
+
+
+        // .blog-main-menu
+        .blog-main-menu
+            width: auto
             height: 100%
+            margin: 0
 
-            border: 1px solid $c-neuter-secondary
-            border-radius: 4px
+            display: flex
+            align-content: center
+            align-items: center
+            justify-content: flex-end
 
-            margin: 0 auto
+            display: none
 
-            // Título da box
-            .title-box
-                font-size: $fs-16px
-                font-weight: $f-bold
-                color: $c-text
-                line-height: 1.7
+            .menu-item
+                width: auto
 
+                margin: 0 25px
+
+                a
+                    font-size: $fs-18px
+                    font-weight: $f-regular
+                    color: $c-accent
+
+                a:hover
+                    text-decoration: none
+
+        // btn menu
+        #btn-menu
+            font-size: $fs-32px
+            color: $c-neuter
+
+            top: 25px
+            right: 25px
+            position: absolute
+
+        // .title-blog
+        .title-blog
+            font-size: $fs-16px
+            font-weight: $f-bold
+            color: $c-text
+
+            top: 85px
+            left: 110px
+            position: absolute
+
+    @media #{$screen-desktop}
+        background: $c-primary
+        width: 100%
+        height: 120px
+
+        top: 0
+        left: 0
+
+        z-index: 999
+        position: fixed
+
+        // .logotipo
+        .logotipo
+            width: 175px
+            height: 175px
+
+            margin: 15px auto
+
+
+        // .blog-main-menu
+        .blog-main-menu
+            width: auto
+            height: 100%
+            margin: 0
+
+            display: flex
+            align-content: center
+            align-items: center
+            justify-content: flex-end
+
+            .menu-item
+                width: auto
+
+                margin: 0 25px
+
+                a
+                    font-size: $fs-18px
+                    font-weight: $f-regular
+                    color: $c-accent
+
+                a:hover
+                    text-decoration: none
+
+        // btn menu
+        #btn-menu
+            display: none
+
+        // .title-blog
+        .title-blog
+            font-size: $fs-32px
+            font-weight: $f-bold
+            color: $c-text
+
+            top: 130px
+            left: 220px
+            position: absolute
+
+// --------------------------------------------------------------
+// # Main Header Compact: Posts and Pages desktop
+// --------------------------------------------------------------
+.main-header-compact
+    @media #{$screen-phone}
+        
+    @media #{$screen-desktop}
+        height: 90px
+
+        // Logotipo compacto
+        .logotipo
+            width: 80px
+            height: 80px
+            margin: 5px
+
+        // .blog-main-menu
+        .blog-main-menu
+            display: none
+
+        // btn menu
+        #btn-menu
+            width: 48px
+            height: 48px
+
+            border: 1px solid $c-secondary
+            border-radius: 3px
+            text-align: center
+            display: block        
+            
+            top: 20px
+            right: 0
+            position: absolute
+            
+            .fa-bars
+                font-size: $fs-32px
+                color: $c-secondary
+                margin: 7px 0
+
+        // Título
+        .title-blog
+            font-size: $fs-24px
+            color: $c-neuter
+
+            top: 30px
+            left: 130px
+
+// --------------------------------------------------------------
+// # Homepage: sct: 1
+// --------------------------------------------------------------
+#homepage
+    @media #{$screen-phone}
+        margin-top: 120px
+        min-height: auto
+
+        // slider-homepage
+        .slider-homepage
+            height: 450px
+            padding: 0
+
+            // Arrows Slick Slider
+            .slick-arrow
+                background: $c-primary
+                // box-shadow: 2px 2px 0px $c-secondary
+                width: 60px
+                height: 60px
+
+                border: none
+                border-radius: 3px
+
+                font-size: $fs-14px
+                color: $c-secondary
+                border: none
+                outline: none
+
+                top: calc(100% / 2 - 30px)
+                position: absolute
+                z-index: 9
+
+            .slick-next
+                right: 8px
+
+            .slick-prev
+                left: 8px
+
+            // Dots Slick slider
+            .slick-dots
+                width: 50%
                 height: 35px
-                margin: 10px 0
-                padding: 0 15px
-                border-bottom: 1px solid $c-neuter-secondary
 
-            // Item dentro do ul
-            .lastnews-item
-                width: 290px
-                height: 105px
-                                
-                margin: 0 auto
-                border-bottom: 1px solid $c-neuter-secondary
+                bottom: 10px
+                left: calc(100% / 2 - 25%)
+                position: absolute
 
                 display: flex
-                flex-wrap: wrap
-                
-                .thumb-mini
-                    display: none
+                align-items: center
+                justify-content: center
+                margin: 0
 
-                .date
-                    font-size: $fs-14px
-                    color: $c-text-secondary
+                li
+                    background: $c-neuter
+
+                    margin: auto 15px
+                    border: 1px solid $c-neuter-secondary
+                    border-radius: 3px
                     
-                    margin: 5px 0
-                    display: block
+                    opacity: .5
 
-                .title
+                    button
+                        background: none
+                        border: none
+                        color: $c-neuter
+
+                .slick-active
+                    background: $c-primary
+                    border: 1px solid $c-primary
+                    opacity: 1
+
+                    button
+                        color: $c-primary
+
+            // .slider-item
+            .slider-item
+                height: 100%
+                position: relative
+
+                &:before
+                    content: ''
+                    background: $c-primary
+                    opacity: .4
+
+                    width: 100%
+                    height: 90%
+
+                    top: 0
+                    left: 0
+                    z-index: 2
+                    position: absolute
+
+                // .thumbnail-destaque
+                .thumbnail-destaque
+                    background-size: auto 100%
+                    background-repeat: no-repeat
+
+                    width: 100%
+                    height: 90%
+
+                    top: 0
+                    left: 0
+                    z-index: 1
+                    position: absolute
+
+                .content-post
+                    width: 100%
+                    height: 100%
+
+                    padding: 0 10px
+
+                    top: 0
+                    left: 0
+                    z-index: 9
+                    position: absolute
+
+                    .category-post
+                        min-width: 105px
+                        max-width: 125px
+
+                        padding: 8px 12px
+                        margin: 20px auto
+                        display: block
+
+                        border: 1px solid $c-secondary
+                        border-radius: 5px
+
+                        text-align: center
+
+                        a
+                            font-size: $fs-14px
+                            color: $c-secondary
+                            text-transform: uppercase
+
+                            &:hover
+                                text-decoration: none
+
+
+                    .title-post
+                        font-size: $fs-24px
+                        font-weight: $f-bold
+                        text-align: left
+                        color: $c-secondary
+                        line-height: 1.7
+
+                        bottom: 110px
+                        position: absolute
+
+                    .link-post
+                        width: 120px                    
+                        border: 1px solid $c-neuter
+                        border-radius: 5px
+                        
+                        margin: 20px auto
+                        padding: 8px 15px
+                        display: block
+
+                        font-size: $fs-14px
+                        text-align: center
+                        color: $c-neuter
+                        text-decoration: none
+
+                        bottom: 40px
+                        position: absolute
+
+        // Hide buttons next/prev
+        .slick-arrow
+            display: none !important
+
+        // Box last news
+        .last-news
+            height: 640px
+
+            // ul
+            .list-lastnews
+                width: 100%
+                height: 100%
+
+                border: 1px solid $c-neuter-secondary
+                border-radius: 4px
+
+                margin: 0 auto
+
+                // Título da box
+                .title-box
                     font-size: $fs-16px
                     font-weight: $f-bold
                     color: $c-text
-                    line-height: 1.4
+                    line-height: 1.7
 
-                    margin: 5px 0
+                    height: 35px
+                    margin: 10px 0
+                    padding: 0 15px
+                    border-bottom: 1px solid $c-neuter-secondary
 
-                // Habilitar a thumb no primeiro <li>
-                &:nth-child(2)
+                // Item dentro do ul
+                .lastnews-item
                     width: 290px
-                    height: 290px
+                    height: 145px
                                     
                     margin: 0 auto
+                    padding: 0 10px
                     border-bottom: 1px solid $c-neuter-secondary
+
+                    display: flex
+                    flex-wrap: wrap
+                    align-items: center
                     
                     .thumb-mini
+                        display: none
+
+                    .date
+                        font-size: $fs-14px
+                        color: $c-text-secondary
+                        
+                        margin: 5px 0
                         display: block
-                                      
-// Homepage: sct: 2
-#sct-2
-    height: 580px
-    margin: 55px auto
 
-    align-items: center
+                    .title
+                        font-size: $fs-16px
+                        font-weight: $f-bold
+                        color: $c-text
+                        line-height: 1.4
 
-    // Post: canto esquerdo
-    .post-wrap-left
-        width: 100%
-        height: 410px
+                        margin: 5px 0
 
-        padding: 0 20px
+                    // Habilitar a thumb no primeiro <li>
+                    &:nth-child(2)
+                        width: 290px
+                        height: 290px
+                                        
+                        margin: 0 auto
+                        border-bottom: 1px solid $c-neuter-secondary
+                        
+                        .thumb-mini
+                            display: block
 
-        .content-post
-            width: 100%
-            height: 100%
+    @media #{$screen-desktop}
+        margin-top: 160px
 
-            border: 1px solid $c-neuter-secondary
-            border-radius: 3px
-            box-shadow: 0px 0px 6px $c-neuter-secondary
+        // slider-homepage
+        .slider-homepage
+            height: 560px
+            padding: 0 15px
 
-            position: relative
+            // Arrows Slick Slider
+            .slick-arrow
+                background: $c-primary
+                // box-shadow: 2px 2px 0px $c-secondary
+                width: 60px
+                height: 60px
 
-            // thumb-post
-            .wrap-thumb
-                width: 100%
-                height: 200px
+                border: none
+                border-radius: 3px
 
+                font-size: $fs-14px
+                color: $c-secondary
+                border: none
+                outline: none
+
+                top: calc(100% / 2 - 30px)
+                position: absolute
+                z-index: 9
+
+            .slick-next
+                right: 8px
+
+            .slick-prev
+                left: 8px
+
+            // Dots Slick slider
+            .slick-dots
+                width: 50%
+                height: 35px
+
+                bottom: 10px
+                left: calc(100% / 2 - 25%)
+                position: absolute
+
+                display: flex
+                align-items: center
+                justify-content: center
                 margin: 0
 
+                li
+                    background: $c-neuter
+
+                    margin: auto 15px
+                    border: 1px solid $c-neuter
+                    border-radius: 3px
+                    
+                    opacity: .5
+
+                    button
+                        background: none
+                        border: none
+                        color: $c-neuter
+
+                .slick-active
+                    background: $c-primary
+                    border: 1px solid $c-primary
+                    opacity: 1
+
+                    button
+                        color: $c-primary
+
+            // .slider-item
+            .slider-item
+                height: 100%
                 position: relative
 
                 &:before
@@ -449,89 +581,209 @@ html
 
                     top: 0
                     left: 0
+                    z-index: 2
                     position: absolute
-                        
-                .post-thumb
+
+                // .thumbnail-destaque
+                .thumbnail-destaque
+                    background-size: 100%
+                    background-repeat: no-repeat
+
                     width: 100%
                     height: 100%
 
-                .category
-                    margin: 0
-                    top: 15px
-                    left: 15px
+                    top: 0
+                    left: 0
+                    z-index: 1
                     position: absolute
 
-            a
-                text-decoration: none
-                
-                &:hover
-                    text-decoration: none
+                .content-post
+                    width: 100%
+                    height: 100%
 
-            // Textos
-            .title-small
-                font-size: $fs-18px
-                font-weight: $f-bold
-                color: $c-text
-                line-height: 1.7
+                    padding: 0 50px
 
-                padding: 0 5px
-                margin: 5px 0
+                    top: 0
+                    left: 0
+                    z-index: 9
+                    position: absolute
 
-            p
-                font-size: $fs-18px
-                font-weight: $f-regular
-                color: $c-text-secondary
-                line-height: 1.7
-                
-                padding: 0 5px
-                margin: 5px 0
+                    .category-post
+                        min-width: 105px
+                        max-width: 125px
 
-            .wrap-infos
-                width: 100%
-                height: 35px
-                padding: 0 10px
+                        padding: 8px 12px
+                        margin: 20px auto
+                        display: block
 
-                border-top: 1px solid $c-neuter-secondary
+                        border: 1px solid $c-secondary
+                        border-radius: 5px
 
-                display: flex
-                align-items: center
-                justify-content: flex-end
+                        text-align: center
 
-                bottom: 0
-                position: absolute
+                        a
+                            font-size: $fs-14px
+                            color: $c-secondary
+                            text-transform: uppercase
 
-                .date,
-                .views
-                    font-size: $fs-14px
-                    color: $c-text
-                    margin: 0 5px
+                            &:hover
+                                text-decoration: none
 
-                    .svg-inline--fa
-                        color: $c-accent
-                        margin: 0 10px
 
-    // Post: Centralizado e grande
-    .post-wrap-center
-        height: 410px
-        padding: 0 15px
-        display: flex
+                    .title-post
+                        font-size: $fs-32px
+                        font-weight: $f-bold
+                        text-align: center
+                        color: $c-secondary
+                        line-height: 1.7
 
-        .content-post
-            height: 100%
-            display: flex
-            
-            border: 1px solid $c-neuter-secondary
-            border-radius: 3px
-            box-shadow: 0px 0px 6px $c-neuter-secondary
+                        margin-top: 150px
+                        padding: 10px 15px
 
-            .half-left-post
+                    .link-post
+                        width: 150px                    
+                        border: 2px solid $c-neuter
+                        border-radius: 5px
+                        
+                        margin: 20px auto
+                        padding: 8px 15px
+                        display: block
+
+                        font-size: $fs-18px
+                        text-align: center
+                        color: $c-neuter
+                        text-decoration: none
+
+                        bottom: 80px
+                        left: calc(100% / 2 - 75px)
+                        position: absolute
+
+        // Box last news
+        .last-news
+            height: 560px
+
+            // ul
+            .list-lastnews
+                width: 330px
                 height: 100%
+
+                border: 1px solid $c-neuter-secondary
+                border-radius: 4px
+
+                margin: 0 auto
+
+                // Título da box
+                .title-box
+                    font-size: $fs-16px
+                    font-weight: $f-bold
+                    color: $c-text
+                    line-height: 1.7
+
+                    height: 35px
+                    margin: 10px 0
+                    padding: 0 15px
+                    border-bottom: 1px solid $c-neuter-secondary
+
+                // Item dentro do ul
+                .lastnews-item
+                    width: 290px
+                    height: 105px
+                                    
+                    margin: 0 auto
+                    border-bottom: 1px solid $c-neuter-secondary
+
+                    display: flex
+                    flex-wrap: wrap
+                    
+                    .thumb-mini
+                        display: none
+
+                    .date
+                        font-size: $fs-14px
+                        color: $c-text-secondary
+                        
+                        margin: 5px 0
+                        display: block
+
+                    .title
+                        font-size: $fs-16px
+                        font-weight: $f-bold
+                        color: $c-text
+                        line-height: 1.4
+
+                        margin: 5px 0
+
+                    // Habilitar a thumb no primeiro <li>
+                    &:nth-child(2)
+                        width: 290px
+                        height: 290px
+                                        
+                        margin: 0 auto
+                        border-bottom: 1px solid $c-neuter-secondary
+                        
+                        .thumb-mini
+                            display: block
+                                      
+// --------------------------------------------------------------
+// # Homepage: sct: 2
+// --------------------------------------------------------------
+#sct-2
+    @media #{$screen-phone}
+        height: 580px
+        margin: 55px auto
+
+        align-items: center
+
+        .col-12
+            padding: 0
+
+        // Post: canto esquerdo
+        .post-wrap-left
+            width: 100%
+            height: 410px
+
+            padding: 0
+
+            .content-post
+                width: 100%
+                height: 100%
+
+                border: 1px solid $c-neuter-secondary
+                border-radius: 3px
+                box-shadow: 0px 0px 6px $c-neuter-secondary
+
                 position: relative
 
-                // span category
-                .category
-                    margin: 15px 5px
-                    position: inherit
+                // thumb-post
+                .wrap-thumb
+                    width: 100%
+                    height: 200px
+
+                    margin: 0
+
+                    position: relative
+
+                    &:before
+                        content: ''
+                        background: $c-primary
+                        opacity: .5
+
+                        width: 100%
+                        height: 100%
+
+                        top: 0
+                        left: 0
+                        position: absolute
+                            
+                    .post-thumb
+                        width: 100%
+                        height: 100%
+
+                    .category
+                        margin: 0
+                        top: 15px
+                        left: 15px
+                        position: absolute
 
                 a
                     text-decoration: none
@@ -539,12 +791,15 @@ html
                     &:hover
                         text-decoration: none
 
-                .title-medium
-                    font-size: $fs-24px
+                // Textos
+                .title-small
+                    font-size: $fs-18px
                     font-weight: $f-bold
                     color: $c-text
-                    line-height: 1.8
-                    margin: 10px 0
+                    line-height: 1.7
+
+                    padding: 0 5px
+                    margin: 5px 0
 
                 p
                     font-size: $fs-18px
@@ -555,6 +810,387 @@ html
                     padding: 0 5px
                     margin: 5px 0
 
+                .wrap-infos
+                    width: 100%
+                    height: 35px
+                    padding: 0 10px
+
+                    border-top: 1px solid $c-neuter-secondary
+
+                    display: flex
+                    align-items: center
+                    justify-content: flex-end
+
+                    bottom: 0
+                    position: absolute
+
+                    .date,
+                    .views
+                        font-size: $fs-14px
+                        color: $c-text
+                        margin: 0 5px
+
+                        .svg-inline--fa
+                            color: $c-accent
+                            margin: 0 10px
+
+        // Post: Centralizado e grande
+        .col-12
+            padding: 0
+
+        .post-wrap-center
+            height: 360px
+            margin-top: 50px
+            padding: 0
+            display: flex
+
+            .content-post
+                height: 100%
+                display: flex
+                
+                border: 1px solid $c-neuter-secondary
+                border-radius: 3px
+                box-shadow: 0px 0px 6px $c-neuter-secondary
+
+                overflow: hidden
+                position: relative
+
+                .half-left-post
+                    height: 100%
+                    position: relative
+
+                    // span category
+                    .category
+                        margin: 15px 5px
+                        position: inherit
+
+                    a
+                        text-decoration: none
+                        
+                        &:hover
+                            text-decoration: none
+
+                    .title-medium
+                        font-size: $fs-18px
+                        font-weight: $f-bold
+                        color: $c-text
+                        line-height: 1.8
+                        margin: 10px 0
+
+                    p
+                        font-size: $fs-18px
+                        font-weight: $f-regular
+                        color: $c-text-secondary
+                        line-height: 1.7
+                        
+                        padding: 0 5px
+                        margin: 5px 0
+
+                    .wrap-infos
+                        width: 95%
+                        height: 35px
+                        padding: 0 10px
+
+                        border-top: 1px solid $c-neuter-secondary
+
+                        display: flex
+                        align-items: center
+                        justify-content: flex-end
+
+                        bottom: 0
+                        left: 2.5%
+                        position: absolute
+
+                        .date,
+                        .views
+                            font-size: $fs-14px
+                            color: $c-text
+                            margin: 0 5px
+
+                            .svg-inline--fa
+                                color: $c-accent
+                                margin: 0 10px
+                .wrap-thumb
+                    opacity: .5
+                    right: 0
+                    position: absolute
+                    z-index: -1
+
+        // Adsense: Só o visual
+        .adsense
+            width: 100%
+            height: 400px
+            border: 1px solid $c-neuter-secondary
+
+            display: none
+
+    @media #{$screen-desktop}
+        height: 580px
+        margin: 55px auto
+
+        align-items: center
+
+        // Post: canto esquerdo
+        .post-wrap-left
+            width: 100%
+            height: 410px
+
+            padding: 0 20px
+
+            .content-post
+                width: 100%
+                height: 100%
+
+                border: 1px solid $c-neuter-secondary
+                border-radius: 3px
+                box-shadow: 0px 0px 6px $c-neuter-secondary
+
+                position: relative
+
+                // thumb-post
+                .wrap-thumb
+                    width: 100%
+                    height: 200px
+
+                    margin: 0
+
+                    position: relative
+
+                    &:before
+                        content: ''
+                        background: $c-primary
+                        opacity: .5
+
+                        width: 100%
+                        height: 100%
+
+                        top: 0
+                        left: 0
+                        position: absolute
+                            
+                    .post-thumb
+                        width: 100%
+                        height: 100%
+
+                    .category
+                        margin: 0
+                        top: 15px
+                        left: 15px
+                        position: absolute
+
+                a
+                    text-decoration: none
+                    
+                    &:hover
+                        text-decoration: none
+
+                // Textos
+                .title-small
+                    font-size: $fs-18px
+                    font-weight: $f-bold
+                    color: $c-text
+                    line-height: 1.7
+
+                    padding: 0 5px
+                    margin: 5px 0
+
+                p
+                    font-size: $fs-18px
+                    font-weight: $f-regular
+                    color: $c-text-secondary
+                    line-height: 1.7
+                    
+                    padding: 0 5px
+                    margin: 5px 0
+
+                .wrap-infos
+                    width: 100%
+                    height: 35px
+                    padding: 0 10px
+
+                    border-top: 1px solid $c-neuter-secondary
+
+                    display: flex
+                    align-items: center
+                    justify-content: flex-end
+
+                    bottom: 0
+                    position: absolute
+
+                    .date,
+                    .views
+                        font-size: $fs-14px
+                        color: $c-text
+                        margin: 0 5px
+
+                        .svg-inline--fa
+                            color: $c-accent
+                            margin: 0 10px
+
+        // Post: Centralizado e grande
+        .post-wrap-center
+            height: 410px
+            padding: 0 15px
+            display: flex
+
+            .content-post
+                height: 100%
+                display: flex
+                
+                border: 1px solid $c-neuter-secondary
+                border-radius: 3px
+                box-shadow: 0px 0px 6px $c-neuter-secondary
+
+                .half-left-post
+                    height: 100%
+                    position: relative
+
+                    // span category
+                    .category
+                        margin: 15px 5px
+                        position: inherit
+
+                    a
+                        text-decoration: none
+                        
+                        &:hover
+                            text-decoration: none
+
+                    .title-medium
+                        font-size: $fs-24px
+                        font-weight: $f-bold
+                        color: $c-text
+                        line-height: 1.8
+                        margin: 10px 0
+
+                    p
+                        font-size: $fs-18px
+                        font-weight: $f-regular
+                        color: $c-text-secondary
+                        line-height: 1.7
+                        
+                        padding: 0 5px
+                        margin: 5px 0
+
+                    .wrap-infos
+                        width: 95%
+                        height: 35px
+                        padding: 0 10px
+
+                        border-top: 1px solid $c-neuter-secondary
+
+                        display: flex
+                        align-items: center
+                        justify-content: flex-end
+
+                        bottom: 0
+                        left: 2.5%
+                        position: absolute
+
+                        .date,
+                        .views
+                            font-size: $fs-14px
+                            color: $c-text
+                            margin: 0 5px
+
+                            .svg-inline--fa
+                                color: $c-accent
+                                margin: 0 10px
+
+        // Adsense: Só o visual
+        .adsense
+            width: 100%
+            height: 400px
+            border: 1px solid $c-neuter-secondary
+
+// --------------------------------------------------------------
+// # Homepage: sct: 3
+// --------------------------------------------------------------
+#sct-3
+    @media #{$screen-phone}
+        display: none
+
+    @media #{$screen-desktop}
+        height: 580px
+
+        margin: 55px auto
+        padding: 10px 110px
+
+        align-items: center
+
+        // Post item
+        .post-item
+            height: 410px
+
+            margin: 15px auto
+            padding: 0 10px
+
+
+            .post-content
+                width: 100%
+                height: 100%
+
+                border: 1px solid $c-neuter-secondary
+                border-radius: 5px
+
+                box-shadow: 0px 0px 5px $c-neuter-secondary
+
+                position: relative
+
+                // Wrap thumb
+                .wrap-thumb
+                    width: 100%
+                    height: 60%
+
+                    margin-bottom: 5px
+
+                    position: relative
+
+                    &:before
+                        content: ''
+                        background: $c-primary
+                        opacity: .5
+
+                        width: 100%
+                        height: 100%
+
+                        border-top-left-radius: 5px
+                        border-top-right-radius: 5px
+
+                        top: 0
+                        left: 0
+
+                        position: absolute
+
+                    .category
+                        margin: 0
+                        top: 15px
+                        left: 15px
+                        position: absolute
+
+                    img
+                        width: 100%
+                        height: 100%
+
+                        border-top-left-radius: 5px
+                        border-top-right-radius: 5px
+                a
+                    text-decoration: none
+                    
+                    &:hover
+                        text-decoration: none
+                        
+                // Title
+                .title
+                    font-size: $fs-18px
+                    font-weight: $f-bold
+                    line-height: 1.6
+                    color: $c-text
+
+                    margin: 5px auto
+                    padding: 5px 10px
+
+                // Views e data
                 .wrap-infos
                     width: 95%
                     height: 35px
@@ -580,306 +1216,211 @@ html
                             color: $c-accent
                             margin: 0 10px
 
-    // Adsense: Só o visual
-    .adsense
-        width: 100%
-        height: 400px
+// --------------------------------------------------------------
+// # Homepage: Newsletter
+// --------------------------------------------------------------
+.newsletter
+    @media #{$screen-phone}
+        display: none
+
+    @media #{$screen-desktop}
+        height: 260px
+
+        margin: 25px auto
+        padding: 25px 15px
+
         border: 1px solid $c-neuter-secondary
+        border-radius: 3px
+        box-shadow: 0px 0px 6px $c-neuter-secondary
 
-// Homepage: sct: 3
-#sct-3 
-    height: 580px
+        // - Titulo da box
+        .title-newsletter
+            font-size: $fs-24px
+            font-weight: $f-bold
 
-    margin: 55px auto
-    padding: 10px 110px
+        // - Formulário
+        .form-newsletter
+            margin: 20px auto
+            
+            display: flex
+            flex-wrap: wrap
 
-    align-items: center
+            // - div.wrap
+            .wrap-input
+                height: 90px
+                margin: 10px auto
 
-    // Post item
-    .post-item
-        height: 410px
+                .desc
+                    font-size: $fs-16px
+                    font-weight: $f-regular
+                    color: $c-text-secondary
 
-        margin: 15px auto
-        padding: 0 10px
+                    margin: 10px 0
+                    display: block
 
+                .ipt-form
+                    font-size: $fs-18px
+                    font-weight: $f-bold
+                    color: $c-text
+                    
+                    width: 100%
+                    height: 45px
+                    margin: 5px
+                    padding: 5px 10px
 
-        .post-content
+                    border: 1px solid $c-neuter-secondary
+                    border-radius: 3px
+                    box-shadow: 0px 0px 6px $c-neuter-secondary
+                    outline: none
+
+                // - Botão de enviar
+                .btn-send
+                    background: $c-primary
+
+                    width: 100%
+                    height: 45px
+
+                    margin-top: 49px
+                    border: none
+                    border-radius: 3px
+
+                    font-size: $fs-18px
+                    font-weight: $f-bold
+                    color: $c-neuter
+
+        .caution
+            font-size: $fs-14px
+            font-weight: $f-bold
+            color: $c-text-secondary
+            margin: 10px 22px
+
+// --------------------------------------------------------------
+// # Homepage: Footer
+// --------------------------------------------------------------
+#footer
+    @media #{$screen-phone}
+        display: none
+
+    @media #{$screen-desktop}
+        background: $c-primary
+        height: 290px
+
+// --------------------------------------------------------------
+// # Article Post
+// --------------------------------------------------------------
+.content-article
+    @media #{$screen-desktop}
+        margin-top: 60px
+
+        // Header post
+        .header-post
             width: 100%
-            height: 100%
-
-            border: 1px solid $c-neuter-secondary
-            border-radius: 5px
-
-            box-shadow: 0px 0px 5px $c-neuter-secondary
-
+            height: 590px
+            margin: 20px auto
             position: relative
 
-            // Wrap thumb
-            .wrap-thumb
+            // - Thumb post
+            .background-thumb
                 width: 100%
-                height: 60%
+                height: 550px
 
-                margin-bottom: 5px
+                // style image background
+                background-size: 100%
+                background-repeat: no-repeat
+                background-attachment: fixed
+                background-position: 0 70
 
-                position: relative
-
-                &:before
-                    content: ''
-                    background: $c-primary
-                    opacity: .5
-
+                // img
+                .post-thumb-full
                     width: 100%
                     height: 100%
-
-                    border-top-left-radius: 5px
-                    border-top-right-radius: 5px
-
-                    top: 0
-                    left: 0
-
                     position: absolute
 
-                .category
-                    margin: 0
-                    top: 15px
-                    left: 15px
-                    position: absolute
-
-                img
-                    width: 100%
-                    height: 100%
-
-                    border-top-left-radius: 5px
-                    border-top-right-radius: 5px
-            a
-                text-decoration: none
-                
-                &:hover
-                    text-decoration: none
-                    
-            // Title
-            .title
-                font-size: $fs-18px
-                font-weight: $f-bold
-                line-height: 1.6
-                color: $c-text
-
-                margin: 5px auto
-                padding: 5px 10px
-
-            // Views e data
+            // - Wrap de informações do post
             .wrap-infos
-                width: 95%
-                height: 35px
-                padding: 0 10px
-
-                border-top: 1px solid $c-neuter-secondary
+                height: 40px
 
                 display: flex
                 align-items: center
-                justify-content: flex-end
 
-                bottom: 0
-                left: 2.5%
-                position: absolute
-
-                .date,
-                .views
+                border-bottom: 1px solid $c-neuter-secondary
+                    
+                .views,
+                .author,
+                .date
                     font-size: $fs-14px
-                    color: $c-text
-                    margin: 0 5px
+                    font-weight: $f-regular
+                    color: $c-text-secondary
 
-                    .svg-inline--fa
-                        color: $c-accent
+                    .icon
                         margin: 0 10px
+                        color: $c-accent
 
-// Homepage: NewsLetter
-.newsletter
-    height: 260px
+        // Post
+        .article
+            margin: 25px auto
+            padding: 15px 0
 
-    margin: 25px auto
-    padding: 25px 15px
-
-    border: 1px solid $c-neuter-secondary
-    border-radius: 3px
-    box-shadow: 0px 0px 6px $c-neuter-secondary
-
-    // - Titulo da box
-    .title-newsletter
-        font-size: $fs-24px
-        font-weight: $f-bold
-
-    // - Formulário
-    .form-newsletter
-        margin: 20px auto
-        
-        display: flex
-        flex-wrap: wrap
-
-        // - div.wrap
-        .wrap-input
-            height: 90px
-            margin: 10px auto
-
-            .desc
-                font-size: $fs-16px
-                font-weight: $f-regular
-                color: $c-text-secondary
-
-                margin: 10px 0
-                display: block
-
-            .ipt-form
-                font-size: $fs-18px
+            .title-post
+                font-size: $fs-32px
                 font-weight: $f-bold
+                line-height: 48px
                 color: $c-text
-                
-                width: 100%
-                height: 45px
-                margin: 5px
-                padding: 5px 10px
+                margin-bottom: 25px
 
-                border: 1px solid $c-neuter-secondary
-                border-radius: 3px
-                box-shadow: 0px 0px 6px $c-neuter-secondary
-                outline: none
-
-            // - Botão de enviar
-            .btn-send
-                background: $c-primary
-
-                width: 100%
-                height: 45px
-
-                margin-top: 49px
-                border: none
-                border-radius: 3px
-
+            // paragrafo
+            p
                 font-size: $fs-18px
-                font-weight: $f-bold
-                color: $c-neuter
-
-    .caution
-        font-size: $fs-14px
-        font-weight: $f-bold
-        color: $c-text-secondary
-        margin: 10px 22px
-
-// Homepage: footer
-#footer
-    background: $c-primary
-    height: 290px
-
-// Página de post
-.content-article
-    margin-top: 60px
-
-    // Header post
-    .header-post
-        width: 100%
-        height: 590px
-        margin: 20px auto
-        position: relative
-
-        // - Thumb post
-        .background-thumb
-            width: 100%
-            height: 550px
-
-            // style image background
-            background-size: 100%
-            background-repeat: no-repeat
-            background-attachment: fixed
-            background-position: 0 70
-
-            // img
-            .post-thumb-full
-                width: 100%
-                height: 100%
-                position: absolute
-
-        // - Wrap de informações do post
-        .wrap-infos
-            height: 40px
-
-            display: flex
-            align-items: center
-
-            border-bottom: 1px solid $c-neuter-secondary
-                
-            .views,
-            .author,
-            .date
-                font-size: $fs-14px
-                font-weight: $f-regular
                 color: $c-text-secondary
+                line-height: 32px
 
-                .icon
-                    margin: 0 10px
-                    color: $c-accent
+                margin: 10px auto
 
-    // Post
-    .article
-        margin: 25px auto
-        padding: 15px 0
-
-        .title-post
-            font-size: $fs-32px
-            font-weight: $f-bold
-            line-height: 48px
-            color: $c-text
-            margin-bottom: 25px
-
-        // paragrafo
-        p
-            font-size: $fs-18px
-            color: $c-text-secondary
-            line-height: 32px
-
-            margin: 10px auto
-
-        // Figure tag
-        .wp-caption
-            max-width: 100%
-            height: auto
-            margin: 50px auto
-
-
-            // Imagens
-            .size-large,
-            .size-full
-                width: 100%
+            // Figure tag
+            .wp-caption
+                max-width: 100%
                 height: auto
+                margin: 50px auto
 
 
-            // Figcaption tag
-            .wp-caption-text
-                margin-top: 15px
-                padding: 15px
+                // Imagens
+                .size-large,
+                .size-full
+                    width: 100%
+                    height: auto
 
-                font-size: $fs-14px
-                font-style: italic
-                color: $c-text-secondary
-                text-align: center
 
-        // Alinhamentos
-        .alignleft
-            margin: 50px 20px 50px 0
+                // Figcaption tag
+                .wp-caption-text
+                    margin-top: 15px
+                    padding: 15px
 
-        .alignright
-            margin: 50px 0px 50px 20px
+                    font-size: $fs-14px
+                    font-style: italic
+                    color: $c-text-secondary
+                    text-align: center
 
-        .aligncenter
-            margin: 50px auto
+            // Alinhamentos
+            .alignleft
+                margin: 50px 20px 50px 0
 
-// Comentários
+            .alignright
+                margin: 50px 0px 50px 20px
+
+            .aligncenter
+                margin: 50px auto
+
+// --------------------------------------------------------------
+// # Comentários
+// --------------------------------------------------------------
 .wrap-comments
-    margin: 50px auto
-    padding: 25px 0
+    @media #{$screen-desktop}
+        margin: 50px auto
+        padding: 25px 0
 
-    border-top: 1px solid $c-neuter-secondary
+        border-top: 1px solid $c-neuter-secondary
 
-    .fb-comments
-        width: 60%
-        margin: 0 auto
-        display: block
+        .fb-comments
+            width: 60%
+            margin: 0 auto
+            display: block

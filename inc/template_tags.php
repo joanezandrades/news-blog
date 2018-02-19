@@ -31,27 +31,12 @@ function nb_main_header() {
     <header class="<?php if( is_home() ) {echo "main-header";} else { echo "main-header main-header-compact";} ?> ">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xl-3">
+                <div class="col-3 col-xl-3">
                     <?php nb_custom_logo(); ?>
                 </div> <!-- /End logotipo -->
-
-                <div class="col-xl-7">
-                    <?php 
-                        $argsMenu = array(
-                            'menu'          => 'main-menu',
-                            'menu_class'    => 'blog-main-menu',
-                            'menu_id'       => 'blog-menu',
-                            'container'     => ''
-                        );
-                        wp_nav_menu( $argsMenu );
-                    ?>
-                    <span id="btn-menu">
-                        <i class="fa fa-bars"></i>
-                    </span>
-                </div><!-- /End Menu -->
-
-                <div class="col-xl-2">
-                    <!-- Configs social links-->
+                
+                <!-- Social network -->
+                <div class="col-3 col-xl-2">
                     <?php 
                         $page_config = get_page_by_title( 'configuracoes', OBJECT, 'nb_configs' );
                         $page_id  = $page_config->ID;
@@ -60,7 +45,6 @@ function nb_main_header() {
                         $pageInstagram = get_post_meta( 784, 'nb_instagram_link', true );
                         $pageYoutube = get_post_meta( 784, 'nb_youtube_link', true );
                     ?>
-                    <!-- Adicionar campos na página de contato -->
                     <div class="header-social-network">
                         <h3 class="title">Conecte-se com a gente</h3>
                         <ul class="social-network-list">
@@ -78,8 +62,23 @@ function nb_main_header() {
                         </ul>
                     </div>
                     
-
                 </div>
+
+                <!-- Main Menu -->
+                <div class="col-6 col-xl-7">
+                    <?php 
+                        $argsMenu = array(
+                            'menu'          => 'main-menu',
+                            'menu_class'    => 'blog-main-menu',
+                            'menu_id'       => 'blog-menu',
+                            'container'     => ''
+                        );
+                        wp_nav_menu( $argsMenu );
+                    ?>
+                    <span id="btn-menu">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div><!-- /End Menu -->
                 <h1 class="title-blog" alt="" title="<?php echo bloginfo( 'description' ) ?>"><?php echo bloginfo( 'description' ) ?></h1>
             </div>
         </div>

@@ -28,7 +28,8 @@ get_header();
                     $destaquesHome->the_post();
             ?>
             <div class="slider-item">
-                <?php the_post_thumbnail( 'post-thumb-big', [ 'class' => 'thumbnail-destaque'] ) ?>
+                <div class="thumbnail-destaque" style="background-image: url(<?php the_post_thumbnail_url( 'full' ); ?>)"></div>
+                <?php //the_post_thumbnail( 'post-thumb-big', [ 'class' => 'thumbnail-destaque'] ) ?>
                 <div class="content-post">
                     <span class="category-post"><?php the_category( 'single' ); ?></span>
                     <h1 class="title-post"><?php the_title(); ?></h1>
@@ -83,7 +84,7 @@ get_header();
     </section> <!-- /End section home -->
 
     <section id="sct-2" class="row">
-        <div class="col-xl-3">
+        <div class="col-12 col-xl-3">
             <?php
             $argsPost = array(
                 'posts_per_page'        => 1,
@@ -124,7 +125,7 @@ get_header();
             endif;
             ?>
         </div> <!-- /End People Post -->
-        <div class="col-xl-6">
+        <div class="col-12 col-xl-6">
             <?php 
             $argsPosts = array(
                 'posts_per_page'        => 1,
@@ -144,7 +145,7 @@ get_header();
             ?>
             <div class="post-wrap-center">
                 <div class="content-post">
-                    <div class="half-left-post col-8">
+                    <div class="half-left-post col-12">
                         <span class="category"><?php the_category( 'single' ); ?></span>
                         <a href="<?php the_permalink() ?>">
                             <h2 class="title-medium" title="<?php the_title() ?>"><?php the_title(); ?></h2>
@@ -156,7 +157,7 @@ get_header();
                             <span class="date"><i class="fa fa-clock"></i><?php the_date(); ?></span>
                         </div>
                     </div>
-                    <div class="wrap-thumb col-4">
+                    <div class="wrap-thumb col-6 col-xl-4">
                         <?php the_post_thumbnail( 'post-thumb-medium-tower', [ 'class' => 'post-thumb'] ); ?>
                     </div>
                 </div>
