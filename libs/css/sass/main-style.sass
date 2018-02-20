@@ -87,7 +87,6 @@ html
                     color: $c-neuter
                     text-decoration: none
 
-
 // --------------------------------------------------------------
 // # Main Header
 // --------------------------------------------------------------
@@ -498,7 +497,7 @@ html
                             display: block
 
     @media #{$screen-desktop}
-        margin-top: 160px
+        margin-top: 200px
 
         // slider-homepage
         .slider-homepage
@@ -729,7 +728,7 @@ html
 // --------------------------------------------------------------
 #sct-2
     @media #{$screen-phone}
-        height: 580px
+        height: 850px
         margin: 55px auto
 
         align-items: center
@@ -1108,7 +1107,139 @@ html
 // --------------------------------------------------------------
 #sct-3
     @media #{$screen-phone}
-        display: none
+        height: 580px
+
+        margin: 55px auto
+        padding: 0
+
+        align-items: center
+
+        #slider-sct3
+            width: 100%
+            margin: 20px auto
+
+        // Post item
+        .post-item
+            height: 370px
+
+            margin: 15px auto
+            padding: 0
+
+
+            .post-content
+                width: 100%
+                height: 100%
+
+                border: 1px solid $c-neuter-secondary
+                border-radius: 5px
+
+                box-shadow: 0px 0px 5px $c-neuter-secondary
+
+                position: relative
+
+                // Wrap thumb
+                .wrap-thumb
+                    width: 100%
+                    height: 50%
+
+                    margin-bottom: 5px
+
+                    position: relative
+
+                    &:before
+                        content: ''
+                        background: $c-primary
+                        opacity: .5
+
+                        width: 100%
+                        height: 100%
+
+                        border-top-left-radius: 5px
+                        border-top-right-radius: 5px
+
+                        top: 0
+                        left: 0
+
+                        position: absolute
+
+                    .category
+                        margin: 0
+                        top: 15px
+                        left: 15px
+                        position: absolute
+
+                    img
+                        width: 100%
+                        height: 100%
+
+                        border-top-left-radius: 5px
+                        border-top-right-radius: 5px
+                a
+                    text-decoration: none
+                    
+                    &:hover
+                        text-decoration: none
+                        
+                // Title
+                .title
+                    font-size: $fs-18px
+                    font-weight: $f-bold
+                    line-height: 1.6
+                    color: $c-text
+
+                    margin: 5px auto
+                    padding: 5px 10px
+
+                // Views e data
+                .wrap-infos
+                    width: 95%
+                    height: 35px
+                    padding: 0 10px
+
+                    border-top: 1px solid $c-neuter-secondary
+
+                    display: flex
+                    align-items: center
+                    justify-content: flex-end
+
+                    bottom: 0
+                    left: 2.5%
+                    position: absolute
+
+                    .date,
+                    .views
+                        font-size: $fs-14px
+                        color: $c-text
+                        margin: 0 5px
+
+                        .svg-inline--fa
+                            color: $c-accent
+                            margin: 0 10px
+
+        // Slick dots
+        .slick-dots
+            width: 100%
+            height: 30px
+
+            display: flex
+            justify-content: center
+            align-items: center
+
+            li
+                background: $c-accent
+                width: 20px
+                height: 5px
+                margin: 0 5px
+                overflow: hidden
+                opacity: .4
+
+                button
+                    background: none
+                    border: none
+                    color: $c-accent
+
+            .slick-active
+                opacity: 1
 
     @media #{$screen-desktop}
         height: 580px
@@ -1117,6 +1248,9 @@ html
         padding: 10px 110px
 
         align-items: center
+
+        #slider-sct3
+            width: 100%
 
         // Post item
         .post-item
@@ -1221,7 +1355,75 @@ html
 // --------------------------------------------------------------
 .newsletter
     @media #{$screen-phone}
-        display: none
+        height: 480px
+
+        margin: 25px auto
+        padding: 15px 15px
+
+        border: 1px solid $c-neuter-secondary
+        border-radius: 3px
+        box-shadow: 0px 0px 6px $c-neuter-secondary
+
+        // - Titulo da box
+        .title-newsletter
+            font-size: $fs-14px
+            font-weight: $f-bold
+
+        // - Formulário
+        .form-newsletter
+            margin: 20px auto
+            
+            display: flex
+            flex-wrap: wrap
+
+            // - div.wrap
+            .wrap-input
+                height: 90px
+                margin: 10px auto
+
+                .desc
+                    font-size: $fs-14px
+                    font-weight: $f-regular
+                    color: $c-text-secondary
+
+                    margin: 10px 0
+                    display: block
+
+                .ipt-form
+                    font-size: $fs-16px
+                    font-weight: $f-bold
+                    color: $c-text
+                    
+                    width: 100%
+                    height: 45px
+                    margin: 5px
+                    padding: 5px 10px
+
+                    border: 1px solid $c-neuter-secondary
+                    border-radius: 3px
+                    box-shadow: 0px 0px 6px $c-neuter-secondary
+                    outline: none
+
+                // - Botão de enviar
+                .btn-send
+                    background: $c-primary
+
+                    width: 100%
+                    height: 45px
+
+                    margin-top: 49px
+                    border: none
+                    border-radius: 3px
+
+                    font-size: $fs-18px
+                    font-weight: $f-bold
+                    color: $c-neuter
+
+        .caution
+            font-size: $fs-14px
+            font-weight: $f-bold
+            color: $c-text-secondary
+            margin: 10px 22px
 
     @media #{$screen-desktop}
         height: 260px

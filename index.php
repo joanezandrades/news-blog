@@ -145,7 +145,7 @@ get_header();
             ?>
             <div class="post-wrap-center">
                 <div class="content-post">
-                    <div class="half-left-post col-12">
+                    <div class="half-left-post col-12 col-xl-8">
                         <span class="category"><?php the_category( 'single' ); ?></span>
                         <a href="<?php the_permalink() ?>">
                             <h2 class="title-medium" title="<?php the_title() ?>"><?php the_title(); ?></h2>
@@ -181,45 +181,47 @@ get_header();
     </div>
     
     <section id="sct-3" class="row">
-        <?php
-        $argsPosts = array(
-            'posts_per_page'        => 4,
-            'offset'                => 0,
-            'post_type'             => 'post',
-            'category'              => '',
-            'category_name'         => '',
-            'orderby'               => 'date',
-            'order'                 => 'DESC',
-            'post_status'           => 'publish'
-        );
-        $listPosts = new WP_query( $argsPosts );
+        <div id="slider-sct3" class="row">        
+            <?php
+            $argsPosts = array(
+                'posts_per_page'        => 4,
+                'offset'                => 0,
+                'post_type'             => 'post',
+                'category'              => '',
+                'category_name'         => '',
+                'orderby'               => 'date',
+                'order'                 => 'DESC',
+                'post_status'           => 'publish'
+            );
+            $listPosts = new WP_query( $argsPosts );
 
-        if( $listPosts->have_posts() ) :
-            while( $listPosts->have_posts() ) :
-                $listPosts->the_post();
-        ?>
-        <div class="post-item col-xl-3">
-            <div class="post-content">
-                <div class="wrap-thumb">
-                    <?php the_post_thumbnail(); ?>
-                    <span class="category"><?php the_category( 'single' ); ?></span>
-                </div>
-                <a href="<?php the_permalink() ?>">
-                    <h3 class="title" title="<?php the_title(); ?>"><?php the_title(); ?></h3>
-                </a>
-                <div class="wrap-infos">
-                    <!-- Add Views -->
-                    <span class="views"><i class="fa fa-eye"></i>220</span>
-                    <span class="date"><i class="fa fa-clock"></i><?php the_date(); ?></span>
+            if( $listPosts->have_posts() ) :
+                while( $listPosts->have_posts() ) :
+                    $listPosts->the_post();
+            ?>
+            <div class="post-item col-xl-3">
+                <div class="post-content">
+                    <div class="wrap-thumb">
+                        <?php the_post_thumbnail(); ?>
+                        <span class="category"><?php the_category( 'single' ); ?></span>
+                    </div>
+                    <a href="<?php the_permalink() ?>">
+                        <h3 class="title" title="<?php the_title(); ?>"><?php the_title(); ?></h3>
+                    </a>
+                    <div class="wrap-infos">
+                        <!-- Add Views -->
+                        <span class="views"><i class="fa fa-eye"></i>220</span>
+                        <span class="date"><i class="fa fa-clock"></i><?php the_date(); ?></span>
+                    </div>
                 </div>
             </div>
+            <?php 
+                endwhile;
+                // reset wp_query()
+                wp_reset_query();
+            endif;
+            ?>
         </div>
-        <?php 
-            endwhile;
-            // reset wp_query()
-            wp_reset_query();
-        endif;
-        ?>
     </section> <!-- /End section -->
     
     <div class="newsletter container">
